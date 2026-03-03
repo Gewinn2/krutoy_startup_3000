@@ -9,10 +9,7 @@
 - Постников Даниил
 
 ## 1. АРМ-Хаб
-### Ссылка на документ с отчётом: 
+### [Ссылка на документ с отчётом](https://docs.google.com/presentation/d/1AQss4U1NE2O6ysxusD57_3y-EhO1echIcK9UDDUnT6s/edit?usp=sharing) 
 
-## 2. Универсальное средство бесперебойного доступа к интернет-ресурсам. 
-### Ссылка на документ с отчётом:
-
-## 3. Бесконтактная WiFi-аналитика присутствия и положения
-### Ссылка на документ с отчётом: https://github.com/Gewinn2/krutoy_startup_3000/blob/main/weeks/week2.md
+## 2. Бесконтактная WiFi-аналитика присутствия и положения
+### [Ссылка на документ с отчётом](https://docs.google.com/presentation/d/1w4CO06IQZllkgWD6brZ8MVicwiUKk9I8QFXXKKzKhkA/edit?usp=sharing) 
