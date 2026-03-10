@@ -16,3 +16,15 @@
 - 🔗 [Неделя 2](./weeks/week2.md)
 
 - 🔗 [Неделя 3](./weeks/week3.md)
+
+- 🔗 [Неделя 4](./weeks/week4.md)
+
+- 🔗 [Неделя 5](./weeks/week5.md)
+
+- 🔗 [Неделя 6](./weeks/week6.md)
+
+- 🔗 [Неделя 7](./weeks/week7.md)
+
+- 🔗 [Неделя 8](./weeks/week8.md)
+
+- 🔗 [Неделя 9](./weeks/week9.md)
