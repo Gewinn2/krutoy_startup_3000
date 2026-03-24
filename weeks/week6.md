@@ -7,3 +7,4 @@
 - Жаров Степан
 - Малчевский Максим
 - Постников Даниил
+### [Ссылка на презентацию](https://docs.google.com/presentation/d/14sum4wy7lj3QqlPVMkb5gT-y_opifvilTmN7Dsk0xvQ/edit?usp=sharing)
