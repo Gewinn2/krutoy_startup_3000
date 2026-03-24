@@ -11,3 +11,5 @@
 ## Ссылка на репозиторий проекта
 
 https://github.com/orgs/APMHub/repositories
+
+### [Ссылка на канбан проекта](https://github.com/orgs/APMHub/projects/1/views/1)
