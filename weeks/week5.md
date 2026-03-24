@@ -7,3 +7,6 @@
 - Жаров Степан
 - Малчевский Максим
 - Постников Даниил
+
+Презентация по выбранному проекту АРМ-Хаб
+https://docs.google.com/presentation/d/1r_3iUEwNYiFy9y8iUW9KY_TvtJ6VtZ7ypWtEzLZt6n8/edit?usp=sharing
