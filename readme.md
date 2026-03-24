@@ -28,3 +28,8 @@
 - 🔗 [Неделя 8](./weeks/week8.md)
 
 - 🔗 [Неделя 9](./weeks/week9.md)
+
+
+# Репозиторий проекта
+
+https://github.com/orgs/APMHub/repositories
