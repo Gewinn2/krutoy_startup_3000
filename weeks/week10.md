@@ -8,4 +8,4 @@
 - Малчевский Максим
 - Постников Даниил
 
-(ссылка на видео)[https://rutube.ru/video/private/d947246d370d226e6c431021ad316c9c/?p=5_T-JuIrV7_OW86svfyLZQ]
+[ссылка на видео](https://rutube.ru/video/private/d947246d370d226e6c431021ad316c9c/?p=5_T-JuIrV7_OW86svfyLZQ)
