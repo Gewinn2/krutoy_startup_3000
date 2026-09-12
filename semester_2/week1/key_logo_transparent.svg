@@ -1,0 +1,403 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="100%" height="100%">
+  <defs>
+    <!-- GLOW FILTERS -->
+    <filter id="keyGlowCore" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5.5" result="blur" />
+    </filter>
+
+    <filter id="keyGlowOuter" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+    </filter>
+
+    <filter id="diffuseGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+    </filter>
+
+    <!-- SPHERE GRADIENTS -->
+    <!-- Base Body: Vibrant sky cyan to rich sapphire blue -->
+    <radialGradient id="sphereBase" cx="42%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#6ad7ff" />
+      <stop offset="28%" stop-color="#22a8ff" />
+      <stop offset="58%" stop-color="#007df6" />
+      <stop offset="82%" stop-color="#005ec4" />
+      <stop offset="100%" stop-color="#003f9e" />
+    </radialGradient>
+
+    <!-- Internal Caustic Glow Pool (Lower Right Glass Interior) -->
+    <radialGradient id="causticWide" cx="68%" cy="62%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="25%" stop-color="#a4edff" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#3ebcff" stop-opacity="0.45" />
+      <stop offset="80%" stop-color="#0072e6" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#0044aa" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Intense Caustic Hotspot -->
+    <radialGradient id="causticHotspot" cx="66%" cy="56%" r="35%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85" />
+      <stop offset="38%" stop-color="#98eaff" stop-opacity="0.45" />
+      <stop offset="78%" stop-color="#3cbaff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#0077ee" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Top-Left Gloss Dome Gradient -->
+    <linearGradient id="topLeftGloss" x1="20%" y1="15%" x2="70%" y2="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="20%" stop-color="#def6ff" stop-opacity="0.8" />
+      <stop offset="48%" stop-color="#8ce0ff" stop-opacity="0.35" />
+      <stop offset="75%" stop-color="#2eb2ff" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#0088ff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Right Crescent Reflection -->
+    <linearGradient id="rightCrescentGrad" x1="98%" y1="35%" x2="55%" y2="60%">
+      <stop offset="0%" stop-color="#d0f4ff" stop-opacity="0.8" />
+      <stop offset="35%" stop-color="#6ad0ff" stop-opacity="0.4" />
+      <stop offset="75%" stop-color="#148cee" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#0055bb" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Bottom Rim Crescent Highlight Gradient -->
+    <linearGradient id="bottomRimGradient" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1.0" />
+      <stop offset="30%" stop-color="#c2f2ff" stop-opacity="0.9" />
+      <stop offset="70%" stop-color="#4abeff" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#0066cc" stop-opacity="0.1" />
+    </linearGradient>
+
+    <!-- KEY GRADIENTS -->
+    <!-- Head Left Shading -->
+    <linearGradient id="headLeftShade" x1="15%" y1="10%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#f2f9ff" />
+      <stop offset="70%" stop-color="#d7edfc" />
+      <stop offset="100%" stop-color="#b6dcf7" />
+    </linearGradient>
+
+    <!-- Head Right Shading -->
+    <linearGradient id="headRightShade" x1="15%" y1="10%" x2="85%" y2="90%">
+      <stop offset="0%" stop-color="#def2fc" />
+      <stop offset="45%" stop-color="#c1e3f8" />
+      <stop offset="85%" stop-color="#9dcbeb" />
+      <stop offset="100%" stop-color="#88bde3" />
+    </linearGradient>
+
+    <!-- Stem Left Strip -->
+    <linearGradient id="stemLeftGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#f5fbff" />
+      <stop offset="100%" stop-color="#d5ebf9" />
+    </linearGradient>
+
+    <!-- Stem Right Strip -->
+    <linearGradient id="stemRightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a2ceea" />
+      <stop offset="60%" stop-color="#88bde1" />
+      <stop offset="100%" stop-color="#72a8d2" />
+    </linearGradient>
+
+    <!-- Bit Face Gradient -->
+    <linearGradient id="bitFaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff8fe" />
+      <stop offset="40%" stop-color="#cde7f9" />
+      <stop offset="85%" stop-color="#9ec9ea" />
+      <stop offset="100%" stop-color="#8bbde0" />
+    </linearGradient>
+
+    <!-- Key Hole Core Glow (Inside the key's circular aperture) -->
+    <radialGradient id="holeCore" cx="48%" cy="46%" r="54%">
+      <stop offset="0%" stop-color="#92e4ff" />
+      <stop offset="40%" stop-color="#46b7ff" />
+      <stop offset="75%" stop-color="#0c76e0" />
+      <stop offset="92%" stop-color="#0456b6" />
+      <stop offset="100%" stop-color="#003e96" />
+    </radialGradient>
+
+    <!-- Transparent Slit Mask -->
+    <mask id="sphereSlitMask">
+      <rect x="0" y="0" width="100%" height="100%" fill="#ffffff" />
+      <path d="
+        M 299 630
+        C 348 676 405 704 472 708
+        C 405 700 348 668 299 630 Z
+      " fill="#000000" />
+    </mask>
+
+    <!-- Sphere Clip -->
+    <clipPath id="sphereClip">
+      <circle cx="515" cy="457" r="276" />
+    </clipPath>
+
+    <!-- Key Silhouette (Clean single path with r_inner=47, r_outer=94) -->
+    <path id="keyPath" d="
+      M 512 161
+      A 94 94 0 0 1 606 255
+      A 94 94 0 0 1 564 330
+      C 548 344 532 352 532 368
+      L 532 522
+      L 600 522
+      A 5 5 0 0 1 605 527
+      L 605 561
+      A 3 3 0 0 1 602 564
+      L 577 564
+      A 3 3 0 0 0 574 567
+      L 574 575
+      A 3 3 0 0 0 577 578
+      L 602 578
+      A 3 3 0 0 1 605 581
+      L 605 615
+      A 5 5 0 0 1 600 620
+      L 532 620
+      L 532 652
+      A 6 6 0 0 1 526 658
+      L 498 658
+      A 6 6 0 0 1 492 652
+      L 492 368
+      C 492 352 476 344 460 330
+      A 94 94 0 0 1 418 255
+      A 94 94 0 0 1 512 161 Z
+    " />
+  </defs>
+
+  <!-- CENTERED ARTWORK (dx=-3, dy=+55) -->
+  <g id="logoCentered" transform="translate(-3, 55)">
+  <!-- ==================== SPHERE ==================== -->
+  <g id="glassSphere">
+    <!-- Outer Deep Blue Aura -->
+    <circle cx="515" cy="457" r="285" fill="#0066ff" opacity="0.45" filter="url(#diffuseGlow)" />
+
+    <!-- Sphere Interior (Clipped) -->
+    <g clip-path="url(#sphereClip)" mask="url(#sphereSlitMask)">
+      <!-- 1. Rich Sky/Azure Base -->
+      <circle cx="515" cy="457" r="276" fill="url(#sphereBase)" />
+
+      <!-- 2. Lower-Right Caustic Light Pool -->
+      <circle cx="515" cy="457" r="276" fill="url(#causticWide)" />
+      <circle cx="515" cy="457" r="276" fill="url(#causticHotspot)" />
+
+      <!-- 3. Soft Diffuse Mid-Left Highlight -->
+      <ellipse cx="360" cy="330" rx="170" ry="120" fill="#ffffff" opacity="0.18" transform="rotate(-32 360 330)" filter="url(#diffuseGlow)" />
+
+      <!-- 4. Top-Left Glossy Dome Cap -->
+      <path d="
+        M 239 457
+        A 276 276 0 0 1 515 181
+        C 435 205 345 270 282 360
+        C 255 400 244 430 239 457 Z
+      " fill="url(#topLeftGloss)" />
+
+      <!-- 5. Sharp Specular Rim Reflection along Top-Left -->
+      <path d="
+        M 265 335
+        A 276 276 0 0 1 465 188
+        C 375 235 305 285 265 335 Z
+      " fill="#ffffff" opacity="0.7" />
+
+      <!-- 6. Right Rim Reflection Crescent -->
+      <path d="
+        M 660 235
+        A 276 276 0 0 1 791 457
+        A 276 276 0 0 1 710 645
+        C 765 520 770 355 660 235 Z
+      " fill="url(#rightCrescentGrad)" />
+      <path d="
+        M 705 275
+        A 276 276 0 0 1 791 457
+        A 276 276 0 0 1 730 625
+      " fill="none" stroke="#d5f5ff" stroke-width="2.5" opacity="0.5" />
+
+      <!-- 7. Bottom Caustic Wave Arc -->
+      <path d="
+        M 380 710
+        C 450 738 580 738 665 685
+        C 580 715 450 715 380 710 Z
+      " fill="#ffffff" opacity="0.45" />
+    </g>
+
+    <!-- Outer Rim Stroke -->
+    <circle cx="515" cy="457" r="276" fill="none" stroke="#5eccff" stroke-width="1.8" opacity="0.8" />
+
+    <!-- 8. BOTTOM-LEFT SEPARATION SLIT & REFLECTION CRESCENT -->
+    <!-- Glowing crescent rim under slit -->
+    <path d="
+      M 302 638
+      C 355 688 415 722 472 715
+      C 415 707 355 674 302 638 Z
+    " fill="url(#bottomRimGradient)" />
+
+    <!-- Bright white specular filament -->
+    <path d="
+      M 318 656
+      C 365 698 410 718 456 714
+      C 410 712 365 693 318 656 Z
+    " fill="#ffffff" opacity="0.9" />
+  </g>
+
+  <!-- ==================== KEY AURA GLOW ==================== -->
+  <g id="keyGlowAura">
+    <!-- Wide Cyan Outer Halo -->
+    <use href="#keyPath" fill="#3acaff" stroke="#3acaff" stroke-width="32" stroke-linejoin="round" opacity="0.65" filter="url(#keyGlowOuter)" />
+    <circle cx="512" cy="255" r="47" fill="#3acaff" stroke="#3acaff" stroke-width="32" opacity="0.65" filter="url(#keyGlowOuter)" />
+
+    <!-- Dense White Inner Halo -->
+    <use href="#keyPath" fill="#ffffff" stroke="#ffffff" stroke-width="14" stroke-linejoin="round" opacity="0.9" filter="url(#keyGlowCore)" />
+    <circle cx="512" cy="255" r="47" fill="#ffffff" stroke="#ffffff" stroke-width="14" opacity="0.9" filter="url(#keyGlowCore)" />
+  </g>
+
+  <!-- ==================== KEY HOLE (WINDOW INTO SPHERE) ==================== -->
+  <circle cx="512" cy="255" r="47" fill="url(#holeCore)" />
+
+  <!-- ==================== THE KEY (3D BEVELED ART) ==================== -->
+  <g id="key">
+    <!-- 1. BASE FACES (LEFT AND RIGHT SPLIT) -->
+    <!-- Left Half of Head Ring -->
+    <path d="
+      M 512 161
+      A 94 94 0 0 0 418 255
+      A 94 94 0 0 0 460 330
+      C 476 344 492 352 492 368
+      L 512 368
+      L 512 302
+      A 47 47 0 0 1 465 255
+      A 47 47 0 0 1 512 208 Z
+    " fill="url(#headLeftShade)" />
+
+    <!-- Right Half of Head Ring -->
+    <path d="
+      M 512 161
+      A 94 94 0 0 1 606 255
+      A 94 94 0 0 1 564 330
+      C 548 344 532 352 532 368
+      L 512 368
+      L 512 302
+      A 47 47 0 0 0 559 255
+      A 47 47 0 0 0 512 208 Z
+    " fill="url(#headRightShade)" />
+
+    <!-- Stem Left Half -->
+    <path d="
+      M 492 368
+      L 512 368
+      L 512 654
+      L 498 654
+      A 6 6 0 0 1 492 648 Z
+    " fill="url(#stemLeftGrad)" />
+
+    <!-- Stem Right Half -->
+    <path d="
+      M 512 368
+      L 532 368
+      L 532 648
+      A 6 6 0 0 1 526 654
+      L 512 654 Z
+    " fill="url(#stemRightGrad)" />
+
+    <!-- Stem Center Vertical Ridge -->
+    <line x1="512" y1="368" x2="512" y2="654" stroke="#c0e2f8" stroke-width="1.5" />
+
+    <!-- 2. STEM 3D BEVEL STRIPS -->
+    <!-- Left Bevel Strip (Catching light) -->
+    <polygon points="492,368 498,372 498,646 492,648" fill="#ffffff" />
+    <!-- Right Bevel Strip (Shadow) -->
+    <polygon points="532,368 526,372 526,646 532,648" fill="#6d9ec5" />
+    <!-- Bottom Tip Bevels -->
+    <polygon points="492,648 498,646 512,654 498,654" fill="#a0ccee" />
+    <polygon points="532,648 526,646 512,654 526,654" fill="#75a5cb" />
+
+    <!-- 3. BIT (TEETH) & BEVELS -->
+    <!-- Base Bit Face -->
+    <path d="
+      M 532 522
+      L 600 522
+      A 5 5 0 0 1 605 527
+      L 605 561
+      A 3 3 0 0 1 602 564
+      L 577 564
+      A 3 3 0 0 0 574 567
+      L 574 575
+      A 3 3 0 0 0 577 578
+      L 602 578
+      A 3 3 0 0 1 605 581
+      L 605 615
+      A 5 5 0 0 1 600 620
+      L 532 620 Z
+    " fill="url(#bitFaceGrad)" />
+
+    <!-- Bit 3D Bevel Facets -->
+    <!-- Top Horizontal Bevel (White Highlight) -->
+    <polygon points="532,522 600,522 595,528 538,528" fill="#ffffff" />
+    <!-- Bottom Horizontal Bevel (Dark Shade) -->
+    <polygon points="532,620 600,620 595,614 538,614" fill="#6394be" />
+
+    <!-- Right Outer Vertical Bevel (Upper Tooth) -->
+    <polygon points="600,522 605,527 605,561 599,557 599,528 595,528" fill="#99c6e9" />
+    <!-- Right Outer Vertical Bevel (Lower Tooth) -->
+    <polygon points="605,581 605,615 600,620 595,614 599,610 599,584" fill="#99c6e9" />
+
+    <!-- Cutout Top Bevel (Facing Down - Shadowed) -->
+    <polygon points="574,564 602,564 597,568 578,568" fill="#6899c2" />
+    <!-- Cutout Left Vertical Bevel (Wall) -->
+    <polygon points="574,564 578,568 578,574 574,578" fill="#b9ddf6" />
+    <!-- Cutout Bottom Bevel (Facing Up - White Highlight!) -->
+    <polygon points="574,578 602,578 597,574 578,574" fill="#ffffff" />
+
+    <!-- Recessed plateau shading on teeth -->
+    <rect x="540" y="530" width="53" height="27" fill="#cbe7fb" opacity="0.6" rx="2" />
+    <rect x="540" y="583" width="53" height="27" fill="#a4ceee" opacity="0.6" rx="2" />
+
+    <!-- 4. KEY HEAD 3D BEVELS & HIGHLIGHTS -->
+    <!-- Circular Highlight Arc on Outer Left of Head -->
+    <path d="
+      M 512 163
+      A 92 92 0 0 0 420 255
+      A 92 92 0 0 0 460 328
+    " fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" opacity="0.9" />
+
+    <!-- Inner Hole Circular Highlight Arc (Lower-Right Inner Rim) -->
+    <path d="
+      M 482 288
+      A 47 47 0 0 0 545 288
+      A 47 47 0 0 0 559 255
+    " fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.8" />
+
+    <!-- 5. CRISP NAVY BLUE OUTLINE (THE DISTINCTIVE CONTOUR) -->
+    <!-- Main Outer Key Outline -->
+    <path d="
+      M 512 161
+      A 94 94 0 0 1 606 255
+      A 94 94 0 0 1 564 330
+      C 548 344 532 352 532 368
+      L 532 522
+      L 600 522
+      A 5 5 0 0 1 605 527
+      L 605 561
+      A 3 3 0 0 1 602 564
+      L 577 564
+      A 3 3 0 0 0 574 567
+      L 574 575
+      A 3 3 0 0 0 577 578
+      L 602 578
+      A 3 3 0 0 1 605 581
+      L 605 615
+      A 5 5 0 0 1 600 620
+      L 532 620
+      L 532 652
+      A 6 6 0 0 1 526 658
+      L 498 658
+      A 6 6 0 0 1 492 652
+      L 492 368
+      C 492 352 476 344 460 330
+      A 94 94 0 0 1 418 255
+      A 94 94 0 0 1 512 161 Z
+    "
+    fill="none"
+    stroke="#08427b"
+    stroke-width="8"
+    stroke-linejoin="round"
+    stroke-linecap="round" />
+
+    <!-- Inner Hole Outline -->
+    <circle cx="512" cy="255" r="47" fill="none" stroke="#08427b" stroke-width="8" />
+  </g>
+  </g>
+</svg>
